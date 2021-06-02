@@ -1,22 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { Provider } from "react-redux";
+// import { Values } from "redux-form-website-template";
+import DishForm from "./components/DishForm";
+import store from "./components/store";
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h2>Dish Form</h2>
+        <Provider store={store}>
+          <div style={{ padding: 15 }}>
+            <DishForm/>
+            {/* <Values form="simple" /> */}
+          </div>
+        </Provider>
       </header>
     </div>
   );
